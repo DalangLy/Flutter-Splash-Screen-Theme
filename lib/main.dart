@@ -2,6 +2,7 @@ import 'package:check_app_settings/app_settings_bloc/app_settings_bloc.dart';
 import 'package:check_app_settings/auth_bloc/auth_bloc.dart';
 import 'package:check_app_settings/dashboard.dart';
 import 'package:check_app_settings/localize_bloc/localize_bloc.dart';
+import 'package:check_app_settings/login.dart';
 import 'package:check_app_settings/splash_screen.dart';
 import 'package:check_app_settings/theme_bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,6 @@ class MyApp extends StatelessWidget {
         child: BlocBuilder<AppSettingsBloc, AppSettingsState>(
           builder: (context, state) {
             if(state is AppSettingsLoaded){
-              print('percentage value is ${state.loadPercentage}');
               return MaterialApp(
                 locale: state.local,
                 title: 'Flutter Demo',
@@ -80,6 +80,9 @@ class MyApp extends StatelessWidget {
                     if(state is IsAuth){
                       print('Auth Loaded');
                       return Dashboard();
+                    }
+                    else if(state is IsNotAuth){
+                      return Login();
                     }
                     return SplashScreen();
                   },

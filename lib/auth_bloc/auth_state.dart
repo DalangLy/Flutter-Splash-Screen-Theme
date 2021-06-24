@@ -9,7 +9,17 @@ class AuthInitial extends AuthState {
   List<Object> get props => [];
 }
 
+class AuthProcessing extends AuthState{
+  @override
+  List<Object?> get props => [];
+}
+
 class IsAuth extends AuthState{
+  @override
+  List<Object?> get props => [];
+}
+
+class IsNotAuth extends AuthState{
   @override
   List<Object?> get props => [];
 }

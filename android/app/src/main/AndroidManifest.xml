@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.check_app_settings">
    <application
+        android:allowBackup="true"
         android:label="check_app_settings"
         android:icon="@mipmap/ic_launcher">
         <activity
